@@ -29,5 +29,45 @@
       </ul>
       <div class="ball"></div>
     </div>
+    <script>
+
+      const rDiv = document.createElement('div');
+      const gDiv = document.createElement('div');
+      const bDiv = document.createElement('div');
+
+      const rgbArr = [0,0,0];
+
+      rDiv.innerHTML = rgbArr[0];
+      gDiv.innerHTML = rgbArr[1];
+      bDiv.innerHTML = rgbArr[2];
+
+      document.body.appendChild(rDiv);
+      document.body.appendChild(gDiv);
+      document.body.appendChild(bDiv);
+
+      let curI = 0;
+      document.body.style.setProperty('background-color', `rgb(${rgbArr[0]},${rgbArr[1]}, ${rgbArr[2]})`);
+
+      setInterval(() => {
+        rgbArr[curI]++;
+        
+        if(rgbArr[curI] === 256)
+          rgbArr[curI] = 0;
+
+        curI++;
+
+        
+
+        rDiv.innerHTML = rgbArr[0];
+        gDiv.innerHTML = rgbArr[1];
+        bDiv.innerHTML = rgbArr[2];
+
+        document.body.style.setProperty('background-color', `rgb(${rgbArr[0]},${rgbArr[1]}, ${rgbArr[2]})`);
+
+        if(curI === 3)
+          curI = 0;
+      }, 1);
+      
+    </script>
   </body>
 </html>
