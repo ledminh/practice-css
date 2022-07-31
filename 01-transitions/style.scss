@@ -2,8 +2,10 @@
 
 :root {
   --color-gray: #8c97b7;
+  --color-not-so-gray: #d2dcf8;
   --color-blue: #1c38f1;
   --color-green: #1fcdb0;
+  --color-white: white;
   --input-height: 3rem;
 }
 body {
@@ -25,9 +27,13 @@ body {
   grid-template-areas: 'input button';
 
   --color: var(--color-gray);
+  --background-color: var(--color-white);
+
   &:focus-within {
     --color: var(--color-blue);
+    --background-color: var(--color-not-so-gray);
   }
+
 }
 
 .ui-input {
@@ -37,6 +43,10 @@ body {
   border: 2px solid var(--color);
   border-radius: 0.25rem;
   outline: none;
+
+  background-color: var(--background-color);
+
+  transition: border .3s, background-color .3s;
 }
 
 .ui-button {
@@ -48,7 +58,21 @@ body {
   border-radius: 0.25rem;
   height: var(--input-height);
   background-color: var(--color);
+
+  &:hover span {
+    transform: translateX(5px);
+    transition: transform .3s;
+
+  }
+
+  transition: background-color .3s;
 }
+
+.ui-button span {
+  display: inline-block;
+
+}
+
 
 [data-show]:not([data-active]) {
   display: none;
