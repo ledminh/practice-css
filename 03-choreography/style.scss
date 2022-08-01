@@ -8,7 +8,9 @@
   --transition-duration: 0.3s;
   --transition-easing: cubic-bezier(0.5, 0, 0.5, 1);
   --animation-duration: 0.8s;
+  --animation-stagger: 0.8s;
 }
+
 body {
   display: flex;
   justify-content: center;
@@ -39,6 +41,7 @@ body {
   > .ui-input,
   > .ui-button {
     // Add animations here
+    animation: slide-up var(--animation-duration) calc(var(--animation-duration) - var(--animation-stagger)) var(--transition-easing) both;
   }
 
   > .ui-input {
