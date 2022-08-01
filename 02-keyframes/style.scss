@@ -28,15 +28,20 @@ body {
   grid-template-areas: 'input button';
 
   // Add an animation here
-
+    animation-name: slide-up;
+    animation-duration: 1s;
   --color: var(--color-gray);
   &:focus-within {
     --color: var(--color-blue);
   }
 
-  > .ui-input,
-  > .ui-button {
+  &:hover .ui-input,
+  &:hover .ui-button {
     // Add an animation here
+    animation-name: shake-hor;
+    animation-duration: .1s;
+    animation-iteration-count: 4;
+    animation-fill-mode: both;
   }
 }
 
@@ -71,9 +76,55 @@ body {
 }
 
 @keyframes slide-up {
-  // Add keyframes here
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
 }
 
-@keyframes shake {
+@keyframes shake-hor {
   // Add a shake animation here
+  0%,
+  100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: none;
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+  
+}
+
+@keyframes shake-vert {
+  // Add a shake animation here
+  0%,
+  100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: none;
+  }
+
+  75% {
+    transform: translateY(5px);
+  }
+  
 }
