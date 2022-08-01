@@ -38,18 +38,6 @@ body {
 
   animation: slide-up var(--animation-duration) var(--transition-easing);
 
-  > .ui-input,
-  > .ui-button {
-    // Add animations here
-    animation: slide-up var(--animation-duration) calc(var(--animation-duration) - var(--animation-stagger)) var(--transition-easing) both;
-  }
-
-  > .ui-input {
-    // ...
-  }
-  > .ui-button {
-    // ...
-  }
 }
 
 .ui-input {
